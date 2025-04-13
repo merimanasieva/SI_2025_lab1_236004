@@ -1,0 +1,15 @@
+*   2bd7ad6 Merge branch '5-filter-tasks-by-category'
+|\  
+| * bfadd3d Implement filterByCategory
+* |   efc909b Merge pull request #11 from merimanasieva/3-list-tasks-sorted-by-name
+|\ \  
+| * | e1c05c4 Implement sortTasksByName
+| |/  
+* |   903a171 Merge pull request #10 from merimanasieva/1-remove-a-task-by-name
+|\ \  
+| |/  
+|/|   
+| * 2ee00da Implement removeTask
+|/  
+* de6a47f Add starter code
+* a123360 Initial commit

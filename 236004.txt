@@ -1,0 +1,107 @@
+Meri Manasieva 236004
+
+
+# Дел 1: Почетна поставка
+
+## Инсталации и иницијализација:
+
+- git init                      # иницијализирање на локален git репо
+- git remote add origin https://github.com/merimanasieva/SI_2025_lab1_236004.git
+- git branch -M master         # поставување на master како почетна гранка
+
+## Почетни фајлови:
+
+- echo Meri Manasieva 236004 > README.md
+- git add README.md
+- git commit -m "Initial commit"
+
+---
+
+# Дел 2: Имплементација на 3 избрани issues
+
+## [Issue #1] Remove a task by name
+
+- git checkout -b 1-remove-a-task-by-name
+- Имплементирано:
+
+```java
+public void removeTaskByName(String name) {
+    tasks.removeIf(task -> task.getName().equalsIgnoreCase(name));
+}
+```
+
+- git add SI2025Lab1Main.java
+- git commit -m "Implement removeTaskByName"
+- git push origin 1-remove-a-task-by-name
+
+## [Issue #3] List tasks sorted by name
+
+- git checkout -b 3-list-tasks-sorted-by-name
+- Имплементирано:
+
+```java
+public List<Task> listTasksSortedByName() {
+    return tasks.stream()
+                .sorted(Comparator.comparing(Task::getName))
+                .collect(Collectors.toList());
+}
+```
+
+- git add SI2025Lab1Main.java
+- git commit -m "Implement listTasksSortedByName"
+- git push origin 3-list-tasks-sorted-by-name
+
+## [Issue #5] Filter tasks by category
+
+- git checkout -b 5-filter-tasks-by-category
+- Имплементирано:
+
+```java
+public List<Task> filterByCategory(String category) {
+    return tasks.stream()
+                .filter(task -> task.getCategory().equalsIgnoreCase(category))
+                .collect(Collectors.toList());
+}
+```
+
+- git add SI2025Lab1Main.java
+- git commit -m "Implement filterByCategory"
+- git push origin 5-filter-tasks-by-category
+
+---
+
+# Дел 3: Merge
+
+## Merge на 2 гранки преку GitHub:
+
+- Отворени pull requests за: `1-remove-a-task-by-name` и `3-list-tasks-sorted-by-name`
+- Додадено "Closes #1" и "Closes #3" во опис
+- Merge преку GitHub (копче Merge pull request)
+- **Конфликти:** Нема
+- **Merge стратегија:** Fast-forward (GitHub автоматски)
+
+## Merge на трета гранка локално:
+
+- git checkout master
+- git merge 5-filter-tasks-by-category
+- **Конфликти:** Нема
+- **Merge стратегија:** Fast-forward
+- git push origin master
+
+---
+
+# Логови
+
+Генерирање на git лог:
+
+- git log --oneline --graph --all > logs.txt
+
+---
+
+# Завршно
+
+- Додадени: 236004.txt, logs.txt
+- git add 236004.txt logs.txt
+- git commit -m "Final commit"
+- git push origin master
+
